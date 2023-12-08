@@ -34,9 +34,9 @@ logs_arr.forEach((log,i)=>{
         top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-25}px);background:firebrick;transition:.2s;`
         bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+25}px);background:firebrick;transition:.2s;`
         setTimeout(()=>{
-            top.style = `height:50%;`
-            bottom.style = `height:50%;`
-        },500)
+            top.style = `height:50%;transition:.15s;`
+            bottom.style = `height:50%;transition:.15s;`
+        },25 * i)
     })
     log.addEventListener('mouseleave',e=>{
         e.preventDefault()
@@ -44,8 +44,8 @@ logs_arr.forEach((log,i)=>{
         top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-100}px);transition:1s;background:brown`
         bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+100}px);transition:1s;background:brown;`
         setTimeout(()=>{
-            top.style = `height:50%;`
-            bottom.style = `height:50%;`
+            top.style = `height:50%;transition:.15s;`
+            bottom.style = `height:50%;transition:.15s;`
         },25 * i)
     })
 })
