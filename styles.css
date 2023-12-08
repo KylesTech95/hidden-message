@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 *{
     margin:0;
     padding:0;
@@ -11,6 +12,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Lato', sans-serif;
+}
+.message{
+    text-transform: uppercase;
 }
 .message-container{
     width: 500px;

@@ -11,7 +11,7 @@ function randomWord(){
     let nextWord = words[Math.floor(Math.random()*words.length)]
     return nextWord
 }
-const words = ['Hello World',`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
+const words = ['Fork for Fun','My name is Kyle','Hello World',`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
 window.addEventListener('mousemove',e=>{
     mouse={x:e.pageX,y:e.pageY}
     array.push(mouse.y)
@@ -31,14 +31,18 @@ logs_arr.forEach((log,i)=>{
     bottom = children[1]
     log.addEventListener('mouseenter',e=>{
         e.preventDefault()
-        top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-75}px);background:firebrick;`
-        bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+75}px);background:firebrick;`
+        top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-25}px);background:firebrick;transition:.2s;`
+        bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+25}px);background:firebrick;transition:.2s;`
+        setTimeout(()=>{
+            top.style = `height:50%;`
+            bottom.style = `height:50%;`
+        },500)
     })
     log.addEventListener('mouseleave',e=>{
         e.preventDefault()
         i+=.15
-        top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-75}px);transition:1s;background:brown`
-        bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+75}px);transition:1s;background:brown;`
+        top.style = `transform:translate(0,${(yPos-top.getBoundingClientRect().height)-100}px);transition:1s;background:brown`
+        bottom.style = `transform:translate(0,${(yPos - top.getBoundingClientRect().height)+100}px);transition:1s;background:brown;`
         setTimeout(()=>{
             top.style = `height:50%;`
             bottom.style = `height:50%;`
@@ -46,8 +50,12 @@ logs_arr.forEach((log,i)=>{
     })
 })
 logList.addEventListener('mouseover',e=>{
+    message.style = 'display:block'
+
     message2.classList.remove('appear')
     message2.classList.add('disappear')
+    message.classList.add('appear')
+
 
 })
 logList.addEventListener('mouseout',e=>{
@@ -55,7 +63,7 @@ logList.addEventListener('mouseout',e=>{
     if(boundary){
         message2.classList.add('appear')
         message2.classList.remove('disappear')
-
+        message.style = 'display:none'
     }
         
 })
