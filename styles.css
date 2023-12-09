@@ -14,7 +14,10 @@
     --btn-light: #333;
     --btn-dark:ghostWhite;
     --btn-light-bg:ghostWhite;
-    --btn-dark-bg:#333;
+    --hover-dark-bg:#333;
+    --hover-light: ghostWhite;
+    --hover-dark: #333;
+    --hover-light-bg: #333;
 }
 
 *{
@@ -116,7 +119,7 @@ position: fixed;
 left: 20px;
 display: flex;
 flex-direction: column;
-gap: 1rem;
+
 
 
 }
@@ -186,10 +189,63 @@ button{
     transition:.3s;
     color:var(--btn-light);
     background:var(--btn-light-bg);
+    padding: 1rem 2rem;
+    cursor:pointer;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
 
 }
+.boundary{
+    border: 3px solid darkGreen;
+    position: absolute;
+    z-index:999;
+    height: 3px;
+    width: 100px;
+    background: lime;
+    transform: rotate(90deg);
+    opacity:.5;
+    animation: bound 1s infinite alternate forwards;
+}
+@keyframes bound {
+    0%{
+        opacity:.25;
+    }
+    100%{
+        opacity:.75
+    }
+    
+}
+.b1{
+    left: 9%;
+    top: 100px;
+}
+.b2{
+    right: 9%;
+    top: 100px;
+}
+.b3{
+    left: 9%;
+    bottom: 100px;
+}
+.b4{
+    right: 9%;
+    bottom: 100px;
+}
+button:hover{
+    background:var(--hover-light-bg); 
+    color:var(--hover-light);
+}
+
 .btn-dark{
     transition:.3s;
     color:var(--btn-dark);
     background:var(--btn-dark-bg);
+}
+.btn-dark:hover{
+    transition:.3s;
+    color:var(--btn-light);
+    background:var(--btn-light-bg);
 }

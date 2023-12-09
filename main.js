@@ -33,21 +33,21 @@ let left = (mouse.x < logList.getBoundingClientRect().x)
     }
 })
 
-function cleanUp(t,b,idx){
- 
-        setTimeout(()=>{
-            t.style=`height:50%;transition:.15;`;
-            b.style=`height:50%;transition:.15;`
-        },50 * (idx+1))
+// function cleanUp(t,b,idx,bool){
+//  let tTime = () =>{
+//     t.style=`height:50%;transition:.15;`;
+//     b.style=`height:50%;transition:.15;`
+//  }
+//  if(bool===true){
+//     setTimeout(tTime,50 * (idx+1))
+//  }
+//  else{
+//     clearTimeout(tTime)
+//  }
+         
     
-}
-let c = 0;
-function modeFn(){
-c++
-let res = c%2==0?false:true
+// }
 
-console.log(res)
-}
 
 //forEach log-item
 logs_arr.forEach((log,i)=>{
@@ -68,7 +68,11 @@ logs_arr.forEach((log,i)=>{
         bottom.style=`height:${bottom.clientHeight+75}px;transition:.15s;`
         },25 * (i+.5))
          //setTimeout to bring both logs together evenly. set Height:50%
-        cleanUp(top,bottom,i)
+         //comment out setTimout for freeStyle version
+         setTimeout(()=>{
+            top.style=`height:50%;transition:.15;`;
+            bottom.style=`height:50%;transition:.15;`
+        },50 * (i+1))
     })
 
 })
