@@ -19,9 +19,10 @@ let btn = document.querySelectorAll('button')
 let modeElem = document.querySelector('.mode')
 
 //Array of words
-const words = ['Fork for Fun','My name is Kyle','Hello World',`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
+const words = ['Fork for Fun','My name is Kyle','Hello World',`Today's Date:\n${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
 //mousemove event listener
-window.addEventListener('mousemove',e=>{
+
+window.addEventListener('mousemove' ? 'mousemove':'touchmove',e=>{
     mouse={x:e.pageX,y:e.pageY}
     array.push(mouse.y)
     yPos = array.pop()

@@ -116,7 +116,7 @@ font-family: 'Lato', sans-serif;
 border: 3px solid red;
 padding: 1rem 2rem;
 position: fixed;
-left: 20px;
+left: 2px;
 display: flex;
 flex-direction: column;
 
@@ -249,3 +249,22 @@ button:hover{
     color:var(--btn-light);
     background:var(--btn-light-bg);
 }
+
+
+
+/*ios iPad*/
+@media screen and (max-width:1550px){
+    .log-list{
+        max-width: 60%;
+        min-width:50%;
+    }
+}
+@media screen and (max-height: 1375px){
+    
+    }
+@media screen and (max-width:1040px){
+    .log-list{
+        width: 75%;
+    }
+}
+/*ios iPad*/
