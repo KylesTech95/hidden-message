@@ -7,12 +7,15 @@ let i = 0;
 let array = []
 let message2 = document.querySelector('.message-container2')
 let message = document.querySelector('.hello-world')
+let secret = document.querySelector('.secrety')
+let uncover = document.querySelector('.message-uncover')
 function randomWord(){
     let nextWord = words[Math.floor(Math.random()*words.length)]
     return nextWord
 }
 let log_top = document.querySelectorAll('.log-top')
 let log_bottom = document.querySelectorAll('.log-bottom')
+let btn = document.querySelectorAll('button')
 
 //Array of words
 const words = ['Fork for Fun','My name is Kyle','Hello World',`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
@@ -73,14 +76,39 @@ logList.addEventListener('mouseout',e=>{
         
 })
 
+
+
 //Optional choice to turn log-item borders on or off
 function B_ON(){
-log_top.forEach(top=>top.classList.add('border-active'))
-log_bottom.forEach(bottom=>bottom.classList.add('border-active'))
+log_top.forEach(top=>top.classList.add('border-active-light'))
+log_bottom.forEach(bottom=>bottom.classList.add('border-active-light'))
 
 }
 function B_OFF(){
-    log_top.forEach(top=>top.classList.remove('border-active'))
-log_bottom.forEach(bottom=>bottom.classList.remove('border-active'))
+log_top.forEach(top=>{
+    top.classList.remove('border-active-light')
+    top.classList.remove('border-active-dark')
+})
+log_bottom.forEach(top=>{
+    top.classList.remove('border-active-light')
+    top.classList.remove('border-active-dark')
+
+})
+
+}
+
+function light(){
+   
+        body.classList.toggle('body-dark')
+        message.classList.toggle('hello-dark')
+        log_top.forEach(log=>log.classList.contains('border-active-light')?log.classList.toggle('border-active-dark'):null)
+        log_bottom.forEach(log=>log.classList.contains('border-active-light')?log.classList.toggle('border-active-dark'):null)
+        secret.classList.toggle('secret-dark')
+        uncover.classList.toggle('uncover-dark')
+        btn.forEach(button=>{
+            button.classList.toggle('btn-dark')
+        })
+        
+
 
 }
