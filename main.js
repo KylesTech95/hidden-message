@@ -40,7 +40,7 @@ logs_arr.forEach((log,i)=>{
         i++
         //insert into log depending on yPos
         top.style=`height:${yPos < logList.clientHeight/2 ? yPos - 75 : yPos - 75}px;transition:.15s;`
-        bottom.style=`height:${yPos > logList.clientHeight/2 ? (body.clientHeight - yPos) - 75 : (body.clientHeight - yPos) - 25}px;transition:.15s;`
+        bottom.style=`height:${yPos > logList.clientHeight/2 ? (body.clientHeight - yPos) - 75 : (body.clientHeight - yPos) - 50}px;transition:.15s;`
         //setTimeout to bring both logs together at the yPos that they first met
         setTimeout(()=>{
         top.style=`height:${top.clientHeight+75}px;transition:.15s;`
