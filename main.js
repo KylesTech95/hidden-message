@@ -33,6 +33,7 @@ let left = (mouse.x < logList.getBoundingClientRect().x)
         message.textContent = randomWord()
     }
 })
+
 window.addEventListener('touchmove',e=>{
     mouse={x:e.pageX,y:e.pageY}
     array.push(mouse.y)
