@@ -124,7 +124,7 @@ gap: 1rem;
 .log-top{
     opacity: 1;
     transition: .25s;
-    animation: colorChange 20s infinite alternate ease-in-out;
+    animation: colorChange 50s infinite alternate ease-in-out;
 }
 @keyframes colorChange{
     0%{

@@ -16,6 +16,7 @@ function randomWord(){
 let log_top = document.querySelectorAll('.log-top')
 let log_bottom = document.querySelectorAll('.log-bottom')
 let btn = document.querySelectorAll('button')
+let modeElem = document.querySelector('.mode')
 
 //Array of words
 const words = ['Fork for Fun','My name is Kyle','Hello World',`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
@@ -31,6 +32,23 @@ let left = (mouse.x < logList.getBoundingClientRect().x)
         message.textContent = randomWord()
     }
 })
+
+function cleanUp(t,b,idx){
+ 
+        setTimeout(()=>{
+            t.style=`height:50%;transition:.15;`;
+            b.style=`height:50%;transition:.15;`
+        },50 * (idx+1))
+    
+}
+let c = 0;
+function modeFn(){
+c++
+let res = c%2==0?false:true
+
+console.log(res)
+}
+
 //forEach log-item
 logs_arr.forEach((log,i)=>{
     //assign your children to a variable
@@ -50,11 +68,7 @@ logs_arr.forEach((log,i)=>{
         bottom.style=`height:${bottom.clientHeight+75}px;transition:.15s;`
         },25 * (i+.5))
          //setTimeout to bring both logs together evenly. set Height:50%
-        setTimeout(()=>{
-            top.style=`height:50%;transition:.15;`;
-            bottom.style=`height:50%;transition:.15;`
-        },50 * (i+1))
-
+        cleanUp(top,bottom,i)
     })
 
 })
