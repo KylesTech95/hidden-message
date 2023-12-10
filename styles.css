@@ -19,7 +19,21 @@
     --hover-dark: #333;
     --hover-light-bg: #333;
 }
+.brush-size-container,
+.brush-size-header,
+.size{
+    border:1px solid red;
+    transition:.3s ease;
+}
 
+.size:hover{
+    background:none;
+    color: var(--btn-light)
+}
+.brush-size-header{
+    text-align: center;
+    pointer-events:none;
+}
 *{
     margin:0;
     padding:0;
@@ -148,6 +162,7 @@ flex-direction: column;
 } 
 
 .message-container2{
+    text-transform: uppercase;
     position: absolute;
     z-index:999;
     width: 25%;
@@ -167,11 +182,9 @@ flex-direction: column;
 }
 
 .uncover{
-    text-transform: uppercase;
     color:var(--message-uncover-light)
 }
 .uncover-dark{
-    text-transform: uppercase;
     color:var(--message-uncover-dark)
 }
 .secrety{
@@ -186,17 +199,25 @@ flex-direction: column;
 }
 
 button{
-    transition:.3s;
     color:var(--btn-light);
     background:var(--btn-light-bg);
+    transition:.3s;
     padding: 1rem 2rem;
     cursor:pointer;
     border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
-
-
+}
+.brush-size-header{
+    color:var(--btn-light);
+    background:var(--btn-light-bg);
+    transition:.3s;
+}
+.size-dark{
+    color:var(--btn-dark);
+    background:var(--btn-dark-bg);
+    transition:.3s;
 }
 .boundary{
     border: 3px solid darkGreen;
