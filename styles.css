@@ -128,7 +128,7 @@ width: 75%
 .toggle-container{
 font-family: 'Lato', sans-serif;
 border: 3px solid red;
-padding: 1rem 2rem;
+padding: 1rem;
 position: fixed;
 left: 2px;
 display: flex;
