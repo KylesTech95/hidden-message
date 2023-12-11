@@ -73,10 +73,10 @@ logs_arr.forEach((log,i)=>{
         },25 * (i+.5))
          //setTimeout to bring both logs together evenly. set Height:50%
          //comment out setTimout for freeStyle version
-         setTimeout(()=>{
-            top.style=`height:50%;transition:.15;`;
-            bottom.style=`height:50%;transition:.15;`
-        },50 * (i+1))
+        //  setTimeout(()=>{
+        //     top.style=`height:50%;transition:.15;`;
+        //     bottom.style=`height:50%;transition:.15;`
+        // },50 * (i+.75))
     })
     
 

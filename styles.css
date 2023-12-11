@@ -19,11 +19,15 @@
     --hover-dark: #333;
     --hover-light-bg: #333;
 }
-.brush-size-container,
+.brush-container,
 .brush-size-header,
 .size{
     border:1px solid red;
     transition:.3s ease;
+}
+.brush-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .size:hover{
@@ -202,7 +206,7 @@ button{
     color:var(--btn-light);
     background:var(--btn-light-bg);
     transition:.3s;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     cursor:pointer;
     border-bottom: none;
     border-top: none;
