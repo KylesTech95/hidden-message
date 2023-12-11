@@ -13,6 +13,7 @@ let sizeMessage=document.querySelector('.brush-size-header')
 function randomWord(){
     let nextWord = words[Math.floor(Math.random()*words.length)]
     return nextWord
+
 }
 let log_top = document.querySelectorAll('.log-top')
 let log_bottom = document.querySelectorAll('.log-bottom')
@@ -22,6 +23,9 @@ let brushes = document.querySelectorAll('.size')
 let brushSize = 50;
 
 brushes.forEach((brush,index)=>{
+    if(index===1){
+        brushes[index].style=`box-shadow:inset 5px 5px 5px .25px #333;`
+    }
     brush.addEventListener('click', e => {
         brushSize = Number(e.target.textContent)
         // if(e.target)e.target.style='border:.5px solid green;'
@@ -34,7 +38,24 @@ brushes.forEach((brush,index)=>{
        
     })
 })
-
+function autoTextFn(text, heading) {
+    body.style = noPointer
+    text = [...text]//text.split``
+    let i = 0, arr = [], len = text.length
+    let timer = setInterval(() => {
+      let take = text.shift(text[i])
+      i += 1
+      arr.push(take)
+      heading.textContent = arr.join``
+      // console.log(text)//sender
+      // console.log(arr)//receiver
+      // console.log(arr.length,len)//compare arr's length w/ original text length
+      if (arr.length === len) {
+        clearInterval(timer)
+        body.style = myPointer
+    }//clearInterval once both lengths are the same.
+    }, 35)
+}
 //Array of words
 const words = ['Fork for Fun','My name is Kyle','Hello World',`Today's Date:\n${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
 //mousemove event listener
@@ -63,6 +84,8 @@ logs_arr.forEach((log,i)=>{
 
     log.addEventListener('mouseenter',e=>{
         e.preventDefault()
+        //Once arrived onto a log, setTimeout for hidden message to appear
+        
         i++
         //insert into log depending on yPos
         top.style=`height:${yPos < logList.clientHeight/2 ? yPos - brushSize : yPos - brushSize}px;transition:.15s;`
@@ -138,21 +161,4 @@ function light(){
 }
 let noPointer = 'pointer-events:none;'
 let myPointer = 'pointer-events:auto'
-function autoTextFn(text, heading) {
-    body.style = noPointer
-    text = [...text]//text.split``
-    let i = 0, arr = [], len = text.length
-    let timer = setInterval(() => {
-      let take = text.shift(text[i])
-      i += 1
-      arr.push(take)
-      heading.textContent = arr.join``
-      // console.log(text)//sender
-      // console.log(arr)//receiver
-      // console.log(arr.length,len)//compare arr's length w/ original text length
-      if (arr.length === len) {
-        clearInterval(timer)
-        body.style = myPointer
-    }//clearInterval once both lengths are the same.
-    }, 35)
-}
+
