@@ -20,6 +20,7 @@ let btn = document.querySelectorAll('button')
 let modeElem = document.querySelector('.mode')
 let brushes = document.querySelectorAll('.size')
 let brushSize = 50;
+
 brushes.forEach((brush,index)=>{
     brush.addEventListener('click', e => {
         brushSize = Number(e.target.textContent)
@@ -73,10 +74,10 @@ logs_arr.forEach((log,i)=>{
         },25 * (i+.5))
          //setTimeout to bring both logs together evenly. set Height:50%
          //comment out setTimout for freeStyle version
-        //  setTimeout(()=>{
-        //     top.style=`height:50%;transition:.15;`;
-        //     bottom.style=`height:50%;transition:.15;`
-        // },50 * (i+.75))
+         setTimeout(()=>{
+            top.style=`height:50%;transition:.15;`;
+            bottom.style=`height:50%;transition:.15;`
+        },50 * (i+.75))
     })
     
 
@@ -134,4 +135,24 @@ function light(){
             button.classList.toggle('btn-dark')
         })
     
+}
+let noPointer = 'pointer-events:none;'
+let myPointer = 'pointer-events:auto'
+function autoTextFn(text, heading) {
+    body.style = noPointer
+    text = [...text]//text.split``
+    let i = 0, arr = [], len = text.length
+    let timer = setInterval(() => {
+      let take = text.shift(text[i])
+      i += 1
+      arr.push(take)
+      heading.textContent = arr.join``
+      // console.log(text)//sender
+      // console.log(arr)//receiver
+      // console.log(arr.length,len)//compare arr's length w/ original text length
+      if (arr.length === len) {
+        clearInterval(timer)
+        body.style = myPointer
+    }//clearInterval once both lengths are the same.
+    }, 35)
 }
