@@ -15,6 +15,8 @@ function randomWord(){
     return nextWord
 
 }
+//Array of words
+const words = ['Fork for Fun','My name is Kyle','Hello World',`Today's Date:\n${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
 let log_top = document.querySelectorAll('.log-top')
 let log_bottom = document.querySelectorAll('.log-bottom')
 let btn = document.querySelectorAll('button')
@@ -24,16 +26,16 @@ let brushSize = 50;
 
 brushes.forEach((brush,index)=>{
     if(index===1){
-        brushes[index].style=`box-shadow:inset 5px 5px 5px .25px #333;`
+        brushes[index].style=`box-shadow:inset 5px 5px 5px .25px #333; background:lime;`
     }
     brush.addEventListener('click', e => {
         brushSize = Number(e.target.textContent)
         // if(e.target)e.target.style='border:.5px solid green;'
         if(e.target){
-            brushes[index].style=`box-shadow:inset 5px 5px 5px .25px #333;`
+            brushes[index].style=`box-shadow:inset 5px 5px 5px .25px #333;background:lime;`
         }
         brushes.forEach((br,ind)=>{
-            if(br!=e.target)brushes[ind].style='box-shadow:none'
+            if(br!=e.target)brushes[ind].style='box-shadow:none;background:none;'
         })
        
     })
@@ -56,8 +58,7 @@ function autoTextFn(text, heading) {
     }//clearInterval once both lengths are the same.
     }, 35)
 }
-//Array of words
-const words = ['Fork for Fun','My name is Kyle','Hello World',`Today's Date:\n${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`,'You are beautiful']
+
 //mousemove event listener
 
 window.addEventListener('mousemove',e=>{
